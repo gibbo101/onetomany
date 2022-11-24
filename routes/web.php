@@ -29,3 +29,15 @@ Route::get('/create', function() {
   return "Done";
 
 });
+
+
+Route::get('/read', function() {
+ $user = User::findOrFail(1);
+
+ 
+ foreach($user->posts as $post) {
+  echo "<p>Title: " . $post->title . "<br> Body: " . $post->body . "<br>";
+ }
+});
+
+
