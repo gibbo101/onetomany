@@ -40,4 +40,9 @@ Route::get('/read', function() {
  }
 });
 
+Route::get('/update', function() {
+  $user = User::findOrFail(1);
+
+  $user->posts()->whereId(1)->update(['title'=>'I love laravel', 'body'=>'This is awesome']);
+});
 
